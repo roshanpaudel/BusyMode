@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <EditText
+                android:id="@+id/message_sub"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:hint="Mode Title"
+                android:imeOptions="actionNext"/>
+
+            <EditText
+                android:id="@+id/message_des"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="Message*"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"/>
+            <Button
+                android:id="@+id/msg_submit"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorAccent"
+                android:text="Submit"
+                android:textColor="@color/viewBg"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

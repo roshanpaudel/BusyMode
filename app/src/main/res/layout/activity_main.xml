@@ -1,0 +1,498 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg1" />
+
+                        <TextView
+                            android:id="@+id/title1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="Meeting"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title1"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit1"
+                            android:layout_width="60dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail1"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton1"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg2" />
+
+                        <TextView
+                            android:id="@+id/title2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="Travelling"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title1"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit2"
+                            android:layout_width="60dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail2"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton2"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg3" />
+
+                        <TextView
+                            android:id="@+id/title3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="home"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title3"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit3"
+                            android:layout_width="60dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail3"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton3"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail3"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail4"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg4" />
+
+                        <TextView
+                            android:id="@+id/title4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="Cinema"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title4"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit4"
+                            android:layout_width="50dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail4"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton4"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail4"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail5"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg5" />
+
+                        <TextView
+                            android:id="@+id/title5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="Trekking"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title5"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit5"
+                            android:layout_width="50dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail5"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton5"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail5"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/card_margin"
+                    android:layout_weight="1"
+                    android:elevation="3dp"
+                    card_view:cardCornerRadius="@dimen/card_album_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/thumbnail6"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/album_cover_height"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/bg6" />
+
+                        <TextView
+                            android:id="@+id/title6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal"
+                            android:text="Office"
+                            android:textAllCaps="true"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/album_title" />
+
+                        <TextView
+                            android:id="@+id/count6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/title6"
+                            android:paddingBottom="@dimen/songs_count_padding_bottom"
+                            android:paddingLeft="@dimen/album_title_padding"
+                            android:paddingRight="@dimen/album_title_padding"
+                            android:textSize="@dimen/songs_count" />
+
+                        <ImageView
+                            android:id="@+id/edit6"
+                            android:layout_width="50dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@id/thumbnail6"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:scaleType="fitCenter"
+                            android:src="@android:drawable/ic_menu_edit" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton6"
+                            android:layout_width="40dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@id/thumbnail6"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/card_margin"
+                            android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
+                            android:background="@drawable/toggle_selector"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn="" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
