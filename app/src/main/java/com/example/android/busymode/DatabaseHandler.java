@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by paudelroshan93 on 12/31/2016.
  */
@@ -81,6 +84,68 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(3), cursor.getString(4));
         // return messageInfo
         return info;
+    }
+
+    // Getting All Messages
+    public List<Information> getAllMessage() {
+        List<Information> messageList = new ArrayList<Information>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_MESSAGE;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Information info = new Information();
+                info.setID(Integer.parseInt(cursor.getString(0)));
+                info.setFlag(Boolean.parseBoolean(cursor.getString(1)));
+                info.setSelected(Boolean.parseBoolean(cursor.getString(2)));
+                info.setMessageSub(cursor.getString(3));
+                info.setMessageDes(cursor.getString(4));
+
+                // Adding message to list
+                messageList.add(info);
+            } while (cursor.moveToNext());
+        }
+
+        // return message list
+        return messageList;
+    }
+
+    // Getting message Count
+    public int getMessageCount() {
+        String countQuery = "SELECT  * FROM " + TABLE_MESSAGE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        // return count
+        return cursor.getCount();
+    }
+
+    // Updating single message
+    public int updateContact(Information info) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_FLAG, String.valueOf(info.getFlag()));
+        values.put(KEY_SELECT, String.valueOf(info.getSelected()));
+        values.put(KEY_SUB, info.getMessageSub());
+        values.put(KEY_DES, info.getMessageDes());
+
+        // updating row
+        return db.update(TABLE_MESSAGE, values, KEY_ID + " = ?",
+                new String[] { String.valueOf(info.getID()) });
+    }
+
+    // Deleting single message
+    public void deleteMessage(Information info) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_MESSAGE, KEY_ID + " = ?",
+                new String[] { String.valueOf(info.getID()) });
+        db.close();
     }
 
 }

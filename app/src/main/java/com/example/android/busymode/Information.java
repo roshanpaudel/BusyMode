@@ -47,7 +47,7 @@ public class Information {
         return this.id;
     }
 
-    public void setID(){
+    public void setID(int id){
         this.id=id;
     }
 
