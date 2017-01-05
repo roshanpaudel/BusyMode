@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Message Table Columns names
     private static final String KEY_ID = "id";
-    private static final String KEY_SELECT = "0";
+    private static final String KEY_SELECT = "selected";
     private static final String KEY_SUB = "subject";
     private static final String KEY_DES = "description";
 
@@ -36,8 +37,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_MESSAGE_TABLE = "CREATE TABLE " + TABLE_MESSAGE + "("
-                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_SELECT + " INTEGER" + KEY_SUB + " TEXT,"
-                + KEY_DES + " TEXT," + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_SELECT + " INTEGER," + KEY_SUB + " TEXT,"
+                + KEY_DES + " TEXT" + ")";
         db.execSQL(CREATE_MESSAGE_TABLE);
     }
 
@@ -61,7 +62,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_SUB, info.getMessageSub()); // Message Subject
         values.put(KEY_DES, info.getMessageDes()); // Message Description
-        values.put(KEY_DES, info.getSelected()); // Selection Flag
+        values.put(KEY_SELECT, info.getSelected()); // Selection Flag
 
         // Inserting Row
         db.insert(TABLE_MESSAGE, null, values);
@@ -72,16 +73,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     Information getInfo(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_MESSAGE, new String[] { KEY_ID,
-                        KEY_SUB, KEY_DES, KEY_SELECT }, KEY_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
+            Cursor cursor = db.query(TABLE_MESSAGE, new String[]{KEY_ID,
+                            KEY_SELECT, KEY_SUB, KEY_DES}, KEY_ID + "=?",
+                    new String[]{String.valueOf(id)}, null, null, null, null);
+            if (cursor != null)
+                cursor.moveToFirst();
 
-        Information info = new Information(Integer.parseInt(cursor.getString(0)),Boolean.parseBoolean(cursor.getString(1)),
-                cursor.getString(2), cursor.getString(3));
-        // return messageInfo
-        return info;
+            Information info = new Information(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)),
+                        cursor.getString(2), cursor.getString(3));
+            // return messageInfo
+             return info;
+
     }
 
     // Getting All Messages
@@ -98,7 +100,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             do {
                 Information info = new Information();
                 info.setID(Integer.parseInt(cursor.getString(0)));
-                info.setSelected(Boolean.parseBoolean(cursor.getString(1)));
+                info.setSelected(Integer.parseInt(cursor.getString(1)));
                 info.setMessageSub(cursor.getString(2));
                 info.setMessageDes(cursor.getString(3));
 
@@ -113,11 +115,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     // Updating single message
-    public int updateContact(Information info) {
+    public int updateInfo(Information info) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
-        values.put(KEY_SELECT, String.valueOf(info.getSelected()));
+        values.put(KEY_SELECT, info.getSelected());
         values.put(KEY_SUB, info.getMessageSub());
         values.put(KEY_DES, info.getMessageDes());
 
@@ -135,6 +136,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // updating row
         return db.update(TABLE_MESSAGE, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(info.getID()) });
+    }
+
+    //Resetting select flag
+    public int resetSelect(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_SELECT, 0);
+
+        // updating row
+        return db.update(TABLE_MESSAGE, values,null,null);
     }
 
     // Deleting single message
@@ -155,5 +167,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return count
         return cursor.getCount();
     }
+
 
 }

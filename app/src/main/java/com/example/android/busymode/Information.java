@@ -5,7 +5,7 @@ package com.example.android.busymode;
  */
 public class Information {
     int id;
-    Boolean selected = false;
+    int selected = 0;
     String messageSub;
     String messageDes;
 
@@ -13,7 +13,7 @@ public class Information {
 
     }
 
-    public Information(int id,Boolean selected, String messageSub, String messageDes){
+    public Information(int id,int selected, String messageSub, String messageDes){
         this.id=id;
         this.selected=selected;
         this.messageSub=messageSub;
@@ -25,16 +25,16 @@ public class Information {
         this.messageDes=messageDes;
     }
 
-    public Information(Boolean selected){
+    public Information(int selected){
         this.selected=selected;
     }
 
 
-    public Boolean getSelected(){
+    public int getSelected(){
         return this.selected;
     }
 
-    public void setSelected(Boolean editFlag){
+    public void setSelected(int selected){
         this.selected = selected ;
     }
 

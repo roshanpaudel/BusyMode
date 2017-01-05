@@ -46,7 +46,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="Meeting"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -56,10 +56,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title1"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
-                            android:textSize="@dimen/songs_count" />
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/songs_count"
+                            />
 
                         <ImageView
                             android:id="@+id/edit1"
@@ -122,7 +128,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="Travelling"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -131,10 +137,15 @@
                             android:id="@+id/count2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/title1"
+                            android:layout_below="@id/title2"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/songs_count" />
 
                         <ImageView
@@ -206,7 +217,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="home"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -216,9 +227,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title3"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/songs_count" />
 
                         <ImageView
@@ -282,7 +298,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="Cinema"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -292,9 +308,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title4"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/songs_count" />
 
                         <ImageView
@@ -366,7 +387,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="Trekking"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -376,9 +397,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title5"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/songs_count" />
 
                         <ImageView
@@ -442,7 +468,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
                             android:gravity="center_horizontal"
-                            android:text="Office"
+                            android:text="Title"
                             android:textAllCaps="true"
                             android:textColor="@color/cardview_light_background"
                             android:textSize="@dimen/album_title" />
@@ -452,10 +478,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/title6"
+                            android:layout_marginTop="8dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="@dimen/songs_count_padding_bottom"
                             android:paddingLeft="@dimen/album_title_padding"
                             android:paddingRight="@dimen/album_title_padding"
-                            android:textSize="@dimen/songs_count" />
+                            android:text="Details"
+                            android:textColor="@color/cardview_light_background"
+                            android:textSize="@dimen/songs_count"/>
 
                         <ImageView
                             android:id="@+id/edit6"
